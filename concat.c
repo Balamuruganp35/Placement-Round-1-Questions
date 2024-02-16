@@ -1,36 +1,48 @@
-#include <stdio.h>
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 int main()
+
 {
-    int sum=0,flag=0;
-    int a[4]={2,6,3,5};
-    int n=5;
-    for(int i=0;i<n;i++)
+    
+    char s1[20];
+    char s2[20];
+    printf("Enter String 1");
+    scanf("%s",s1);
+    
+    printf("Enter String 2");
+    scanf("%s",s2);
+    int c;
+    char ch;
+    for(int i=0;s1[i]!='\0';i++)
     {
+       c++;
+       ch=s1[i];
        
-        sum+=a[i];
-        
     }
-    for(int i=0;i<n-1;i++)
+    if(ch==s2[0])
+    
     {
-        for(int j=i+1;j<n;j++)
+        for(int i=1;s2[i]!='\0';i++)
         {
-            int s=a[i]+a[j];
-            int diff=sum-s;
-            if(diff==s)
-            {
-                flag++;
-            }
+            
+            s1[c]=s2[i];
+            c++;
         }
-    }
-    if(flag>0)
-    {
-        printf("cool");
+        
     }
     else
     {
-        printf("not cool");
+     for(int i=0;s2[i]!='\0';i++)
+        {
+            
+            s1[c]=s2[i];
+            c++;
+        }
     }
-
+    printf("\n%s",s1);
+    
     return 0;
+    
 }
+
